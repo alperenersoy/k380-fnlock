@@ -110,6 +110,8 @@ static void toggle_lock(GtkWidget *widget, gpointer data)
     if (result != 0)
     {
         fprintf(stderr, "[ERROR] Failed to toggle Fn lock.\n");
+  
+        gtk_main_quit();
     }
     else
     {
