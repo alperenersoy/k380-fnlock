@@ -1,0 +1,66 @@
+# Logitech K380 Fn Lock
+
+A system tray utility for toggling the Fn lock on Logitech K380 bluetooth keyboards on Linux. Inspiration taken from the [dheygere/k380-fn-lock-for-windows](https://github.com/dheygere/k380-fn-lock-for-windows) project.
+
+## Description
+
+Easily toggle between F1-F12 and media key modes on your Logitech K380 keyboard using a simple system tray indicator. Specified for K380 keyboards, but may work with other Logitech keyboards when vendor ID and product ID are set correctly in the source code.
+
+## Requirements
+
+### System Dependencies
+
+- `hidapi-hidraw` - For HID device communication
+- `libappindicator3-0.1` - For system tray integration
+- `gtk+-3.0` - For GUI components
+- `gcc` - For compilation
+- `pkg-config` - For dependency management
+
+## Installation
+
+### 1. Install Dependencies
+
+#### Ubuntu/Debian:
+```bash
+sudo apt update
+sudo apt install build-essential pkg-config libhidapi-dev libappindicator3-dev libgtk-3-dev
+```
+
+---
+
+### 2. Compile from Source
+
+If you want to build the program yourself:
+
+```bash
+make
+```
+
+---
+
+### 3. Use Precompiled Binaries
+
+Linux x86_64 binary is available in the `bin/` directory. You can use it without compiling.
+
+## Usage
+
+### Run the Program
+
+Foreground:
+```bash
+sudo ./bin/k380-fnlock
+```
+
+Background:
+```bash
+sudo ./bin/k380-fnlock > /dev/null 2>&1 &
+```
+
+### Autostart (Optional)
+
+To start the utility automatically with your desktop session, create an autostart entry:
+
+```bash
+chmod +x install.sh
+sudo ./install.sh
+```
