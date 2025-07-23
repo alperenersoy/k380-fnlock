@@ -6,6 +6,9 @@ A system tray utility for toggling the fn lock on Logitech K380 bluetooth keyboa
 
 ## Description
 
+<img src="assets/screenshot.png" alt="K380 Fn Lock Screenshot">
+
+
 Easily toggle between F1-F12 and media key modes on your Logitech K380 keyboard using a simple system tray indicator. Specified for K380 keyboards, but may work with other Logitech keyboards when vendor ID and product ID are set correctly in the source code.
 
 ## Requirements
