@@ -1,6 +1,8 @@
 # Logitech K380 Fn Lock
 
-A system tray utility for toggling the Fn lock on Logitech K380 bluetooth keyboards on Linux. Inspiration taken from the [dheygere/k380-fn-lock-for-windows](https://github.com/dheygere/k380-fn-lock-for-windows) project.
+<img src="assets/icon.png" alt="K380 Fn Lock Icon">
+
+A system tray utility for toggling the fn lock on Logitech K380 bluetooth keyboards on Linux. Inspiration taken from the [dheygere/k380-fn-lock-for-windows](https://github.com/dheygere/k380-fn-lock-for-windows) project.
 
 ## Description
 
@@ -26,9 +28,7 @@ sudo apt update
 sudo apt install build-essential pkg-config libhidapi-dev libappindicator3-dev libgtk-3-dev
 ```
 
----
-
-### 2. Compile from Source
+### 2.1 Compile from Source
 
 If you want to build the program yourself:
 
@@ -38,7 +38,7 @@ make
 
 ---
 
-### 3. Use Precompiled Binaries
+### 2.2 Use Precompiled Binaries
 
 Linux x86_64 binary is available in the `bin/` directory. You can use it without compiling.
 
@@ -56,11 +56,13 @@ Background:
 sudo ./bin/k380-fnlock > /dev/null 2>&1 &
 ```
 
-### Autostart (Optional)
+### Install (Optional)
 
-To start the utility automatically with your desktop session, create an autostart entry:
+> **Warning:**  
+> Installation requires sudo access. This utility needs elevated privileges to access HID devices, so the install process creates a sudoers file to allow running the utility without a password. If you are not comfortable with this, you can run the utility manually without installing.
+
+To start the utility automatically with your desktop session and add it to your application menu, run:
 
 ```bash
-chmod +x install.sh
-sudo ./install.sh
+make install
 ```
