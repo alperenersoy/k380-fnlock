@@ -20,7 +20,7 @@ void clean(hid_device *handle, struct hid_device_info *devs)
     hid_exit();
 }
 
-int switchFnLock(int vendor_id, int product_id, bool lock)
+int switch_fn_lock(int vendor_id, int product_id, bool lock)
 {
     const unsigned char unlocked[] = {0x10, 0xFF, 0x0B, 0x1E, 0x01, 0x00, 0x00}; // Media keys and such
     const unsigned char locked[] = {0x10, 0xFF, 0x0B, 0x1E, 0x00, 0x00, 0x00};   // F1-F12 keys
@@ -105,7 +105,7 @@ static void toggle_lock(GtkWidget *widget, gpointer data)
 
     lock = !lock;
 
-    int result = switchFnLock(vendor_id, product_id, lock);
+    int result = switch_fn_lock(vendor_id, product_id, lock);
 
     if (result != 0)
     {
@@ -124,7 +124,7 @@ static void toggle_lock(GtkWidget *widget, gpointer data)
 
 int main(int argc, char *argv[])
 {
-    int result = switchFnLock(vendor_id, product_id, lock);
+    int result = switch_fn_lock(vendor_id, product_id, lock);
 
     if (result != 0)
     {
